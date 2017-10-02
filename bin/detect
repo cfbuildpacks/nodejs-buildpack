@@ -7,4 +7,8 @@ if [ -f "$1/package.json" ]; then
   exit 0
 fi
 
-exit 1
+if [ -f $1/Aptfile ]; then
+  echo "Apt" && exit 0
+else
+  echo "no" && exit 1
+fi
